@@ -17,5 +17,9 @@
             "OSW3\\Breadcrumb\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "symfony/twig-bundle": "6.4.*",
+        "symfony/options-resolver": "6.4.*",
+        "symfony/ux-twig-component": "^2.18"
+    }
 }

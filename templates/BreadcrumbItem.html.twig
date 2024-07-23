@@ -1,0 +1,7 @@
+<li {{_get_attributes(_attr)}}>
+{% if active %}
+    <span><twig:BreadcrumbItemIcon :icon="icon" />{{ label }}</span>
+{% else %}
+    <a href="{{ url(route) }}"><twig:BreadcrumbItemIcon :icon="icon" />{{ label }}</a>
+{% endif %}
+</li>

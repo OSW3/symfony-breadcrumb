@@ -1,0 +1,8 @@
+{% set _attr = attr|default({}) %}
+{% set _attr = _add_attribute(_attr, 'id', id) %}
+{% set _attr = _add_attribute(_attr, 'class', class) %}
+{% set _attr = _add_attribute(_attr, 'style', style) %}
+{% set _attr = _add_attribute(_attr, 'aria-label', "breadcrumb") %}
+{% set _disabled = disabled %}
+
+{% extends "@Breadcrumb/Breadcrumb.html.twig" %}
