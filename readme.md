@@ -27,6 +27,15 @@ return [
 ];
 ```
 
+### Step 3: Expose the Bundle to Twig
+
+```yaml
+twig_component:
+    defaults:
+        #...
+        OSW3\Breadcrumb\Twig\Components\: '@Breadcrumb/'
+```
+
 ## How to use
 
 ### Step 1: Edit controllers
