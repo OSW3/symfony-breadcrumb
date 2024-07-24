@@ -29,6 +29,8 @@ return [
 
 ### Step 3: Expose the Bundle to Twig
 
+Add the breadcrumb to the Twig component settings `config/packages/twig_component.yaml`
+
 ```yaml
 twig_component:
     defaults:
