@@ -91,7 +91,7 @@ Or wtih custom ID and/or custom class
 
 The breadcrumb configuration is located at `config/package/breadcrumb.yaml`.
 
-Configuration sample
+### Configuration sample
 
 ```yaml
 breadcrumb:
@@ -107,3 +107,5 @@ breadcrumb:
         absolute: false
     hide_empty: true
 ```
+
+### Configuration options
