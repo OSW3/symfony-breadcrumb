@@ -9,7 +9,7 @@ class BreadcrumbExtension extends AbstractExtension
 {
     public function getFunctions(): array
     {
-        return [            
+        return [
             new TwigFunction('_add_attribute', [BreadcrumbRuntime::class, 'addAttribute']),
             new TwigFunction('_get_attributes', [BreadcrumbRuntime::class, 'getAttributes'], ['is_safe' => ['html']]),
         ];
