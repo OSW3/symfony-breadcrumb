@@ -1,6 +1,7 @@
 <?php 
 namespace OSW3\Breadcrumb\DependencyInjection;
 
+use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Config\FileLocator;
 use OSW3\Breadcrumb\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,10 +21,6 @@ class BreadcrumbExtension extends Extension implements PrependExtensionInterface
 	 */
 	public function load(array $configs, ContainerBuilder $container)
     {
-		// dump("do on load");
-		// dump($this->getAlias());
-
-
 		// Default Config
 		// --
 		
