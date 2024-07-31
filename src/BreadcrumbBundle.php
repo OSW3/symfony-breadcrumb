@@ -32,7 +32,7 @@ class BreadcrumbBundle extends Bundle
 
             if (!isset( $twig_component_ArrayContent['twig_component']['defaults'][$newClassPath] ))
             {
-                file_put_contents($twig_component_Filepath, Yaml::dump(array_merge_recursive($twig_component_ArrayContent, ['twig_component' => ['defaults' => [$newClassPath => "@Search/"]]]), 4));
+                file_put_contents($twig_component_Filepath, Yaml::dump(array_merge_recursive($twig_component_ArrayContent, ['twig_component' => ['defaults' => [$newClassPath => "@Breadcrumb/"]]]), 4));
             }
         }
 
