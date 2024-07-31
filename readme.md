@@ -35,7 +35,7 @@ Add the breadcrumb to the Twig component settings `config/packages/twig_componen
 twig_component:
     defaults:
         #...
-        OSW3\Breadcrumb\Twig\Components\: '@Breadcrumb/'
+        OSW3\Breadcrumb\Components\: '@Breadcrumb/'
 ```
 
 ## How to use

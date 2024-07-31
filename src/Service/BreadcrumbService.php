@@ -35,10 +35,6 @@ class BreadcrumbService
             $breadcrumb = $attribute->newInstance();
 
             $this->items = $breadcrumb->getItems();
-
-            // Utilisez les données de l'attribut, par exemple en les stockant dans la session ou en les envoyant à Twig
-            // dump($breadcrumb->getLabel(), $breadcrumb->getDomain());
-            dump($breadcrumb->getItems());
         }
     }
 
