@@ -1,5 +1,5 @@
 <?php
-namespace OSW3\Breadcrumb\Twig\Components;
+namespace OSW3\Breadcrumb\Components;
 
 use OSW3\Breadcrumb\Service\BreadcrumbService;
 use Symfony\UX\TwigComponent\Attribute\PreMount;

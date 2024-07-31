@@ -1,5 +1,5 @@
 <?php
-namespace OSW3\Breadcrumb\Twig\Components;
+namespace OSW3\Breadcrumb\Components;
 
 use Symfony\UX\TwigComponent\Attribute\PreMount;
 use Symfony\Component\OptionsResolver\OptionsResolver;
