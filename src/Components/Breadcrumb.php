@@ -3,6 +3,7 @@ namespace OSW3\Breadcrumb\Components;
 
 use OSW3\Breadcrumb\Service\BreadcrumbService;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
+use Symfony\UX\TwigComponent\Attribute\PostMount;
 use OSW3\Breadcrumb\DependencyInjection\Configuration;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
@@ -12,25 +13,30 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 #[AsTwigComponent(template: '@Breadcrumb/Breadcrumb.twig')]
 final class Breadcrumb
 {
-    #[ExposeInTemplate(name: 'id')]
+    #[ExposeInTemplate(name: 'disabled', getter: 'fetchDisabled')]
+    private bool $disabled;
+
+    // #[ExposeInTemplate(name: 'id')]
     public string $id;
 
-    #[ExposeInTemplate(name: 'class')]
+    // #[ExposeInTemplate(name: 'class')]
     public string $class;
 
-    #[ExposeInTemplate(name: 'style', getter: 'fetchStyle')]
-    private ?string $style;
-
-    #[ExposeInTemplate(name: 'disabled', getter: 'fetchDisabled')]
-    private ?string $disabled;
-
-    public function __construct(
+    public function __construct
+    (
         private ParameterBagInterface $params,
         private BreadcrumbService $breadcrumbService
     ){}
 
+    public function mount(?string $id = null, ?string $class = null): void
+    {
+        $this->disabled = false;
+        $this->id       = $id ?? "";
+        $this->class    = $class ?? "";
+    }
+
     #[PreMount]
-    public function preMount(array $data): array
+    public function preMount(array $data): array 
     {
         // validate data
         $resolver = new OptionsResolver();
@@ -55,21 +61,5 @@ final class Breadcrumb
         $items = $this->breadcrumbService->getItems();
         
         return empty($items) && $hideEmpty;
-    }
-
-    public function fetchStyle(): ?string
-    {
-        $options = $this->params->get(Configuration::NAME);
-        $style = [];
-
-        if ($options['separator']) {
-            $style[] = match($options['template'])
-            {
-                'bootstrap' => "--bs-breadcrumb-divider: '{$options['separator']}';",
-                default => "--breadcrumb-divider: '{$options['separator']}';",
-            };
-        }
-
-        return implode("", $style);
     }
 }
