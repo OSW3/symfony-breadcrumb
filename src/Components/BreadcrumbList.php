@@ -57,7 +57,7 @@ final class BreadcrumbList
 
         array_push($items, array_merge($default, [
             'label'  => $options['home']['label'],
-            'domain' => "", //$options['home']['domain'],
+            'domain' => $options['home']['domain'],
             'lang'   => "en", //$options['home']['domain'],
             'route'  => $options['home']['route'],
             'icon'   => $options['home']['icon'],
