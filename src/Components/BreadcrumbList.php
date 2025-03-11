@@ -45,27 +45,33 @@ final class BreadcrumbList
         $options = $this->params->get(Configuration::NAME);
 
         $default = [
-            'label' => null,
-            'class' => null,
-            'route' => null,
-            'icon'  => null,
+            'label'  => null,
+            'domain' => null,
+            'lang'   => null,
+            'class'  => null,
+            'route'  => null,
+            'icon'   => null,
         ];
 
         $items = [];
 
         array_push($items, array_merge($default, [
-            'label' => $options['home']['label'],
-            'route' => $options['home']['route'],
-            'icon' => $options['home']['icon'],
+            'label'  => $options['home']['label'],
+            'domain' => "", //$options['home']['domain'],
+            'lang'   => "en", //$options['home']['domain'],
+            'route'  => $options['home']['route'],
+            'icon'   => $options['home']['icon'],
         ]));
 
         foreach ($this->breadcrumbService->getItems() as $item)
         {
             array_push($items, array_merge($default, [
-                'label' => $item['label'],
-                'route' => $item['route'],
-                'class' => $item['class'] ?? null,
-                'icon' => $item['icon'] ?? null,
+                'label'  => $item['label'],
+                'domain' => $item['domain'],
+                'lang'   => $item['lang'],
+                'route'  => $item['route'],
+                'class'  => $item['class'],
+                'icon'   => $item['icon'],
             ]));
         }
 

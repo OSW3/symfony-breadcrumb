@@ -3,10 +3,7 @@ namespace OSW3\Breadcrumb\Service;
 
 use ReflectionClass;
 use OSW3\Breadcrumb\Attribute\Breadcrumb;
-use OSW3\Breadcrumb\DependencyInjection\Configuration;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class BreadcrumbService
 {

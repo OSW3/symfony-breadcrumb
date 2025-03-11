@@ -2,6 +2,8 @@
 {% for item in items %}
     <twig:BreadcrumbItem 
         :label="item.label" 
+        :domain="item.domain"
+        :lang="item.lang"
         :icon="item.icon" 
         :active="loop.last" 
         :route="item.route" 

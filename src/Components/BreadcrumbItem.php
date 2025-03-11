@@ -12,6 +12,12 @@ final class BreadcrumbItem
     #[ExposeInTemplate(name: 'label')]
     public string $label;
 
+    #[ExposeInTemplate(name: 'domain')]
+    public ?string $domain;
+
+    #[ExposeInTemplate(name: 'lang')]
+    public string $lang;
+
     #[ExposeInTemplate(name: 'active')]
     public bool $active;
 
@@ -33,6 +39,12 @@ final class BreadcrumbItem
 
         $resolver->setDefaults(['label' => ""]);
         $resolver->setAllowedTypes('label', ['string']);
+
+        $resolver->setDefaults(['domain' => null]);
+        $resolver->setAllowedTypes('domain', ['null','string']);
+
+        $resolver->setDefaults(['lang' => "en"]);
+        $resolver->setAllowedTypes('lang', ['string']);
 
         $resolver->setDefaults(['active' => false]);
         $resolver->setAllowedTypes('active', ['bool']);

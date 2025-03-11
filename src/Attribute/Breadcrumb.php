@@ -20,8 +20,24 @@ class Breadcrumb
                 throw new \InvalidArgumentException('Each breadcrumb item must have a "route".');
             }
 
+            if (!isset($item['params'])) {
+                $item['params'] = [];
+            }
+
             if (!isset($item['domain'])) {
                 $item['domain'] = null;
+            }
+
+            if (!isset($item['lang'])) {
+                $item['lang'] = "en";
+            }
+
+            if (!isset($item['class'])) {
+                $item['class'] = null;
+            }
+
+            if (!isset($item['icon'])) {
+                $item['icon'] = null;
             }
 
             $this->items[] = $item;
